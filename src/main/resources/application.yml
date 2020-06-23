@@ -1,0 +1,25 @@
+server:
+  port: 8080
+  address: 0.0.0.0
+  #最新版本是这么要求的
+
+  servlet:
+    context-path: /chart_leave
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/message_chart?characterEncoding=UTF8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: root
+  # Java持久化API
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  #指定页面访问地址
+  thymeleaf:
+    prefix: classpath:/static/
+    suffix: .html
+    cache: false
+
+
