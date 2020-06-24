@@ -19,7 +19,7 @@ public class user {
     private String userPasswd;
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Timestamp registerTime;
-    
+
     private String token;
 
     public void setUserId(int userId) {
