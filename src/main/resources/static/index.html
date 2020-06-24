@@ -42,6 +42,17 @@
 		    var user = {};
 		    user.userName = document.getElementById("inputUserName").value;
 		    user.passwd = document.getElementById("inputPassword").value;
+
+            var xmjjlen  = user.userName.length;
+            if(xmjjlen==0){
+                alert('用户名不能为空');
+                return false;
+            }
+            var title  = user.passwd.length;
+            if(title==0){
+                alert('密码不能为空');
+                return false;
+            }
 		    var response;
             $.ajax({
                 async : false,

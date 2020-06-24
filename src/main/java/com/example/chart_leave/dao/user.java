@@ -1,7 +1,6 @@
 package com.example.chart_leave.dao;
 
-
-import com.alibaba.fastjson.annotation.JSONField;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import javax.persistence.Column;
@@ -21,7 +20,7 @@ public class user {
     private String userName;
     @Column(nullable = false,columnDefinition = "varchar(40)  COMMENT '用户密码'")
     private String userPasswd;
-    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @Column(nullable = false,columnDefinition = "datetime  COMMENT '注册时间'")
     private Timestamp registerTime;
     @Column(nullable = false,columnDefinition = "varchar(400)  COMMENT '加密秘钥'")

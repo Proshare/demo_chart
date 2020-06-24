@@ -28,8 +28,8 @@
     <div id="wordArea"></div>
     <div>
         <h2>留言</h2>
-        <input type="text" class="form-control s-margin-1" placeholder="标题" id="title">
-        <textarea class="form-control s-margin-1" placeholder="内容" rows="3" id="content"></textarea>
+        <input type="text" class="form-control s-margin-1" placeholder="标题" id="title" required="required">
+        <textarea class="form-control s-margin-1" placeholder="内容" rows="3" id="content" ></textarea>
         <button class="btn btn-primary s-margin-1" type="submit" onclick="leaveWord()">提交</button>
     </div>
 </div>
@@ -40,11 +40,13 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/util.js"></script>
 <script type="application/javascript">
+
     if(getCookie("user") == null)
         window.location.href= address+"index.html";
 
     initWords();
     function initWords() {
+
         var users = JSON.parse(getCookie("user"));
         var user = {};
         user.userId = users.userId;
@@ -81,6 +83,16 @@
     }
 
     function leaveWord() {
+        var xmjjlen  = document.getElementById('content').value.length;
+        if(xmjjlen==0){
+            alert('请填写留言内容');
+            return false;
+        }
+        var title  = document.getElementById('title').value.length;
+        if(title==0){
+            alert('请填写留言标题');
+            return false;
+        }
         var users = JSON.parse(getCookie("user"));
         var word = {};
         word.title = document.getElementById("title").value;

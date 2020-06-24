@@ -42,6 +42,16 @@
         var user = {};
         user.userName = document.getElementById("inputUserName").value;
         user.Passwd = document.getElementById("inputPassword").value;
+        var xmjjlen  = user.userName.length;
+        if(xmjjlen==0){
+            alert('注册从好听的网名开始！');
+            return false;
+        }
+        var title  = user.Passwd.length;
+        if(title==0){
+            alert('注意密码哦！');
+            return false;
+        }
         var response;
         $.ajax({
             async : false,

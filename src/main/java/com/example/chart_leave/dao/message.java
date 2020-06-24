@@ -1,6 +1,7 @@
 package com.example.chart_leave.dao;
 
-import com.alibaba.fastjson.annotation.JSONField;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import javax.persistence.Column;
@@ -22,7 +23,7 @@ public class message {
     private String title;
     @Column(nullable = false,columnDefinition = "varchar(20000) COMMENT '留言内容' default ''")
     private String content;
-    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     @Column(nullable = false,columnDefinition = "datetime COMMENT '留言时间'")
     private Timestamp leaveTime;
 }
